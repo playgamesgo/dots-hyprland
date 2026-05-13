@@ -254,7 +254,8 @@ hl.animation({
 
 hl.config({
     input = {
-        kb_layout = "us",
+        kb_layout = "us,ru,ua",
+        kb_options = "grp:win_space_toggle"
         numlock_by_default = true,
         repeat_delay = 250,
         repeat_rate = 35,
@@ -273,7 +274,8 @@ hl.config({
     misc = {
         disable_hyprland_logo = true,
         disable_splash_rendering = true,
-        vrr = 0,
+        vfr = 1,
+        vrr = 1,
         mouse_move_enables_dpms = true,
         key_press_enables_dpms = true,
         animate_manual_resizes = false,
@@ -284,7 +286,8 @@ hl.config({
         allow_session_lock_restore = true,
         session_lock_xray = true,
         initial_workspace_tracking = false,
-        focus_on_activate = true
+        focus_on_activate = true,
+        enable_anr_dialog = false
     },
 
     binds = {
@@ -293,6 +296,7 @@ hl.config({
     },
 
     cursor = {
+        no_hardware_cursors = 0
         zoom_factor = 1,
         zoom_rigid = false,
         zoom_disable_aa = true,

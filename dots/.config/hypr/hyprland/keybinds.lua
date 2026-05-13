@@ -6,8 +6,8 @@ local hyprScripts = "$HOME/.config/hypr/hyprland/scripts"
 local qsIpcCall = "qs -c $qsConfig ipc call"
 local qsIsAlive = qsIpcCall.." TEST_ALIVE"
 
-hl.bind("SUPER + SUPER_L", hl.dsp.global("quickshell:searchToggleRelease"), {description = "Toggle search"} )
-hl.bind("SUPER + SUPER_R", hl.dsp.global("quickshell:searchToggleRelease"))
+-- hl.bind("SUPER + SUPER_L", hl.dsp.global("quickshell:searchToggleRelease"), {description = "Toggle search"} )
+-- hl.bind("SUPER + SUPER_R", hl.dsp.global("quickshell:searchToggleRelease"))
 hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd(qsIsAlive.." || pkill fuzzel || fuzzel") )
 hl.bind("SUPER + SUPER_R", hl.dsp.exec_cmd(qsIsAlive.." || pkill fuzzel || fuzzel") )
 
@@ -15,19 +15,19 @@ hl.bind("SUPER_L", hl.dsp.global("quickshell:workspaceNumber"), {ignore_mods = t
 hl.bind("SUPER_R", hl.dsp.global("quickshell:workspaceNumber"), {ignore_mods = true, transparent = true} )
 hl.bind("SUPER_L", hl.dsp.global("quickshell:workspaceNumber"), {ignore_mods = true, transparent = true, release = true} )
 hl.bind("SUPER_R", hl.dsp.global("quickshell:workspaceNumber"), {ignore_mods = true, transparent = true, release = true} )
-hl.bind("SUPER + Tab", hl.dsp.global("quickshell:overviewWorkspacesToggle"), {description = "Toggle overview"} )
+hl.bind("SUPER + A", hl.dsp.global("quickshell:overviewWorkspacesToggle"), {description = "Toggle overview"} )
 hl.bind("SUPER + V", hl.dsp.global("quickshell:overviewClipboardToggle"), {description = "Clipboard history >> clipboard"} )
 hl.bind("SUPER + Period", hl.dsp.global("quickshell:overviewEmojiToggle"), {description = "Emoji >> clipboard"} )
-hl.bind("SUPER + A", hl.dsp.global("quickshell:sidebarLeftToggle"), {description = "Toggle left sidebar"} )
+-- hl.bind("SUPER + A", hl.dsp.global("quickshell:sidebarLeftToggle"), {description = "Toggle left sidebar"} )
 hl.bind("SUPER + ALT + A", hl.dsp.global("quickshell:sidebarLeftToggleDetach") )
-hl.bind("SUPER + B", hl.dsp.global("quickshell:sidebarLeftToggle") )
-hl.bind("SUPER + O", hl.dsp.global("quickshell:sidebarLeftToggle") )
+-- hl.bind("SUPER + B", hl.dsp.global("quickshell:sidebarLeftToggle") )
+-- hl.bind("SUPER + O", hl.dsp.global("quickshell:sidebarLeftToggle") )
 hl.bind("SUPER + N", hl.dsp.global("quickshell:sidebarRightToggle"), {description = "Toggle right sidebar"} )
 hl.bind("SUPER + Slash", hl.dsp.global("quickshell:cheatsheetToggle"), {description = "Toggle cheatsheet"} )
 hl.bind("SUPER + K", hl.dsp.global("quickshell:oskToggle"), {description = "Toggle on-screen keyboard"} )
 hl.bind("SUPER + M", hl.dsp.global("quickshell:mediaControlsToggle"), {description = "Toggle media controls"} )
 hl.bind("SUPER + G", hl.dsp.global("quickshell:overlayToggle"), {description = "Toggle widget overlay"} )
-hl.bind("CTRL + ALT + Delete", hl.dsp.global("quickshell:sessionToggle"), {description = "Toggle session menu"} )
+hl.bind("SUPER + Delete", hl.dsp.global("quickshell:sessionToggle"), {description = "Toggle session menu"} )
 hl.bind("SUPER + J", hl.dsp.global("quickshell:barToggle"), {description = "Toggle bar"} )
 hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd(qsIsAlive.." || pkill wlogout || wlogout -p layer-shell") )
 hl.bind("SHIFT + SUPER + ALT + Slash", hl.dsp.exec_cmd("qs -p $HOME/.config/quickshell/$qsConfig/welcome.qml") )
@@ -54,10 +54,10 @@ hl.bind("SUPER + V", hl.dsp.exec_cmd(
  qsIsAlive.." || pkill fuzzel || cliphist list | fuzzel --match-mode fzf --dmenu | cliphist decode | wl-copy"), {description = "Clipboard history >> clipboard"} )
 hl.bind("SUPER + Period", hl.dsp.exec_cmd(
  qsIsAlive.." || pkill fuzzel || "..hyprScripts.."/fuzzel-emoji.sh copy"), {description = "Emoji >> clipboard"} )
-hl.bind("SUPER + SHIFT + S", hl.dsp.global("quickshell:regionScreenshot"), {description = "Screen snip"} )
+hl.bind("SUPER + Print", hl.dsp.global("quickshell:regionScreenshot"), {description = "Screen snip"} )
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd(qsIsAlive.." || pidof slurp || hyprshot --freeze --clipboard-only --mode region --silent") )
-hl.bind("SUPER + SHIFT + A", hl.dsp.global("quickshell:regionSearch"), {description = "Google Lens"} )
-hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd(qsIsAlive.." || pidof slurp || "..hyprScripts.."/snip_to_search.sh") )
+-- hl.bind("SUPER + SHIFT + A", hl.dsp.global("quickshell:regionSearch"), {description = "Google Lens"} )
+-- hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd(qsIsAlive.." || pidof slurp || "..hyprScripts.."/snip_to_search.sh") )
 --# OCR
 hl.bind("SUPER + SHIFT + X", hl.dsp.global("quickshell:regionOcr"), {description = "Character recognition >> clipboard"} )
 hl.bind("SUPER + SHIFT + T", hl.dsp.global("quickshell:screenTranslate"), {description = "Translate screen content"} )
@@ -76,12 +76,12 @@ hl.bind("SUPER + SHIFT + ALT + R", hl.dsp.exec_cmd(qsScripts.."/videos/record.sh
 --# Fullscreen screenshot
 local grimhyprctl = "grim -o \"$(hyprctl activeworkspace -j | jq -r '.monitor')\""
 hl.bind("Print", hl.dsp.exec_cmd(grimhyprctl.." - | wl-copy"), {locked = true, description = "Screenshot >> clipboard"} )
-hl.bind("CTRL + Print", hl.dsp.exec_cmd(
- "mkdir -p $(xdg-user-dir PICTURES)/Screenshots && "..grimhyprctl.." $(xdg-user-dir PICTURES)/Screenshots/Screenshot_\"$(date '+%Y-%m-%d_%H.%M.%S')\".png"
-), {locked = true, non_consuming = true, description = "Screenshot >> clipboard & file"} )
+-- hl.bind("CTRL + Print", hl.dsp.exec_cmd(
+--  "mkdir -p $(xdg-user-dir PICTURES)/Screenshots && "..grimhyprctl.." $(xdg-user-dir PICTURES)/Screenshots/Screenshot_\"$(date '+%Y-%m-%d_%H.%M.%S')\".png"
+-- ), {locked = true, non_consuming = true, description = "Screenshot >> clipboard & file"} )
 hl.bind("CTRL + Print", hl.dsp.exec_cmd(grimhyprctl.." - | wl-copy"), {locked = true, non_consuming = true})
 --# AI
-hl.bind("SUPER + SHIFT + ALT + mouse:273", hl.dsp.exec_cmd(hyprScripts.."/ai/primary-buffer-query.sh"), {description = "Generate AI summary for selected text"} )
+-- hl.bind("SUPER + SHIFT + ALT + mouse:273", hl.dsp.exec_cmd(hyprScripts.."/ai/primary-buffer-query.sh"), {description = "Generate AI summary for selected text"} )
  -- (requires a running ollama model)
 
 --#!
@@ -161,6 +161,17 @@ end
 for i = 1, 10 do
  local numpadkey = {87,88,89,83,84,85,79,80,81,90}
  hl.bind("SUPER + code:"..numpadkey[i], hl.dsp.focus({ workspace = i}) )
+end
+
+-- Move window WITH focus to workspace (Super+Shift+[0-9])
+for i = 1, 10 do
+  local numberkey = {10,11,12,13,14,15,16,17,18,19}
+  hl.bind("SUPER + SHIFT + code:"..numberkey[i], hl.dsp.window.move({ workspace = i, follow = true }) )
+end
+-- keypad numbers
+for i = 1, 10 do
+  local numpadkey = {87,88,89,83,84,85,79,80,81,90}
+  hl.bind("SUPER + SHIFT + code:"..numpadkey[i], hl.dsp.window.move({ workspace = i, follow = true }) )
 end
 
 --#/# bind = CTRL+SUPER, ←/→,, -- Focus left/right
@@ -266,6 +277,8 @@ hl.bind("SUPER + X", hl.dsp.exec_cmd(textEditor), {description = "Text editor"} 
 hl.bind("CTRL + SUPER + V", hl.dsp.exec_cmd(volumeMixer), {description = "Volume mixer"} )
 hl.bind("SUPER + I", hl.dsp.exec_cmd(settingsApp), {description = "Settings app"} )
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(taskManager), {description = "Task manager"} )
+hl.bind("F8", hl.dsp.exec_cmd(toggleDiscordMute), {description = "Mute/Unmute in Discord"})
+hl.bind("F9", hl.dsp.pass("class:^(com\.obsproject\.Studio)$") {description = "Mute/Unmute in OBS"})
 
 --# Cursed stuff
 --## Make window not amogus large
