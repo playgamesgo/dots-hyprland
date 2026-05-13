@@ -255,7 +255,7 @@ hl.animation({
 hl.config({
     input = {
         kb_layout = "us,ru,ua",
-        kb_options = "grp:win_space_toggle"
+        kb_options = "grp:win_space_toggle",
         numlock_by_default = true,
         repeat_delay = 250,
         repeat_rate = 35,
@@ -295,7 +295,7 @@ hl.config({
     },
 
     cursor = {
-        no_hardware_cursors = 0
+        no_hardware_cursors = 0,
         zoom_factor = 1,
         zoom_rigid = false,
         zoom_disable_aa = true,

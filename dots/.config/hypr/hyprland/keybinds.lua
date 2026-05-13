@@ -278,7 +278,7 @@ hl.bind("CTRL + SUPER + V", hl.dsp.exec_cmd(volumeMixer), {description = "Volume
 hl.bind("SUPER + I", hl.dsp.exec_cmd(settingsApp), {description = "Settings app"} )
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(taskManager), {description = "Task manager"} )
 hl.bind("F8", hl.dsp.exec_cmd(toggleDiscordMute), {description = "Mute/Unmute in Discord"})
-hl.bind("F9", hl.dsp.pass("class:^(com\.obsproject\.Studio)$") {description = "Mute/Unmute in OBS"})
+hl.bind("F9", hl.dsp.pass({window = "class:^(com.obsproject.Studio)$"}), {description = "Mute/Unmute in OBS"})
 
 --# Cursed stuff
 --## Make window not amogus large
