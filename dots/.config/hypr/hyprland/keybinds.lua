@@ -376,6 +376,7 @@ hl.bind("SUPER + I", hl.dsp.exec_cmd(settingsApp), { description = "App: Setting
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(taskManager), { description = "App: Task manager" })
 hl.bind("F8", hl.dsp.exec_cmd(toggleDiscordMute), { description = "App: Mute/Unmute in Discord" })
 hl.bind("F9", hl.dsp.pass({window = "class:^(com.obsproject.Studio)$"}), { description = "App: Mute/Unmute in OBS" })
+hl.bind("F24", hl.dsp.pass({window = "class:^(com.obsproject.Studio)$"}), { description = "App: Add Chapter Marker in OBS" })
 
 --# Cursed stuff
 --## Make window not amogus large
