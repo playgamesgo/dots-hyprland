@@ -3,8 +3,8 @@
 -- Disable blur for xwayland context menus
 hl.window_rule({match = {class = "^()$", title = "^()$" },                   no_blur = true })
 
--- Disable blur for every window
-hl.window_rule({match = {class = ".*" }, no_blur = true })
+-- Disable blur and allow unfocused render for every window
+hl.window_rule({match = {class = ".*" }, no_blur = true, render_unfocused = true })
 
 -- Floating
 hl.window_rule({match = {title = "^(Open File)(.*)$" },                      center = true})

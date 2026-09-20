@@ -286,7 +286,8 @@ hl.config({
         session_lock_xray = true,
         initial_workspace_tracking = false,
         focus_on_activate = true,
-        enable_anr_dialog = false
+        enable_anr_dialog = false,
+        render_unfocused_fps = 30
     },
 
     binds = {
