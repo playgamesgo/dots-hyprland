@@ -378,6 +378,12 @@ hl.bind("F8", hl.dsp.exec_cmd(toggleDiscordMute), { description = "App: Mute/Unm
 hl.bind("F9", hl.dsp.pass({window = "class:^(com.obsproject.Studio)$"}), { description = "App: Mute/Unmute in OBS" })
 hl.bind("F24", hl.dsp.pass({window = "class:^(com.obsproject.Studio)$"}), { description = "App: Add Chapter Marker in OBS" })
 
+hl.bind("SUPER + F10", hl.dsp.exec_cmd("$HOME/.config/hypr/custom/scripts/bt-headphones-to-laptop.sh"),
+    { description = "Headphones: to laptop (ask phone to release)" })
+hl.bind("SUPER + F11", hl.dsp.exec_cmd("$HOME/.config/hypr/custom/scripts/bt-headphones-to-phone.sh"),
+    { description = "Headphones: to phone (release + tell phone to connect)" })
+
+
 --# Cursed stuff
 --## Make window not amogus large
 hl.bind("CTRL + SUPER + Backslash", hl.dsp.window.resize({ x = 640, y = 480, "exact" }))
