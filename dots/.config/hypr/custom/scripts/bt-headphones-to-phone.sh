@@ -2,7 +2,7 @@
 
 set -u
 HEADPHONES_MAC="08:EB:ED:9A:A4:79"
-PHONE_KDE_ID="0720a7c95c88468c8597d6cc654dbdcc"
+PHONE_KDE_ID="2a498bbb40724564a54100c503e6ec84"
 
 notify() {
   if command -v notify-send >/dev/null 2>&1; then
