@@ -2,8 +2,7 @@
 
 set -u
 HEADPHONES_MAC="08:EB:ED:9A:A4:79"
-PHONE_KDE_ID="0720a7c95c88468c8597d6cc654dbdcc"
-# PulseAudio/PipeWire sink name pattern (colons become underscores)
+PHONE_KDE_ID="2a498bbb40724564a54100c503e6ec84"
 SINK_PATTERN="bluez_output.08_EB_ED_9A_A4_79"
 
 notify() {
